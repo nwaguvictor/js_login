@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login System</title>
+</head>
+<body>
+  <h1>Please Complete Form</h1>
+  <form action="#" id="loginForm">
+    <fieldset>
+      <legend>Login Form</legend>
+      <input type="email" id="userEmail" placeholder="Enter email"><br>
+      <input type="password" id="userPassword" placeholder="password"><br><br>
+      <button type="submit" id="signinBtn">Login</button>
+      <p>Not yet a member? <a href="#" id="regBtn">Sign up here</a></p> 
+    </fieldset>
+  </form>
+  
+  <form action="#" id="registrationForm">
+    <fieldset>
+      <legend>Registration Form</legend>
+      <input type="text" id="name" placeholder="Name" required><br>
+      <input type="email" id="regEmail" placeholder="Enter email" required><br>
+      <input type="password" id="regPassword" placeholder="password" required><br><br>
+      <button type="submit" id="signupBtn">Sign Up</button>
+      <p>Already have an account? <a href="#" id="loginBtn">Sign in</a></p>
+    </fieldset>
+  </form>
+  <script src="./app.js"></script>
+</body>
+</html>

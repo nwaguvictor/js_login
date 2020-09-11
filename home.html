@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <header>
+    <h1>Home Page</h1> 
+    <nav>
+      <button class="logoutBtn" onclick="logout()">Logout</button>
+      <button onclick="showUpdateForm()" class="editBtn">Edit User</button>
+    </nav> <br> <hr>
+
+    <h4>Name: <strong id="name"></strong></h4>
+    <h4>Email: <strong id="email"></strong></h4>
+  </header>
+
+  <form action="#" id="editForm">
+    <input type="text" id="newName" placeholder="Enter new name">
+    <button type="submit">Update</button>
+  </form>
+
+
+  <!-- Script -->
+  <script>
+    if (!window.localStorage.getItem('email')) {
+      window.location.replace('index.html');
+    }
+
+    function logout() {
+      if (confirm('Are you sure?')) {
+        window.localStorage.setItem('loggedIn', false);
+        window.location.replace('index.html');
+      }
+    }
+
+    function showUpdateForm() {
+      document.querySelector('#editForm').style.display = '';
+    }
+
+    window.addEventListener('load', function(event) {
+      document.querySelector('#editForm').style.display = 'none';
+      document.querySelector('#name').innerHTML = localStorage.getItem('name');
+      document.querySelector('#email').innerHTML = localStorage.getItem('email');
+    });
+
+    document.querySelector('#editForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const name = document.querySelector('#newName').value;
+      if (confirm('Are you sure?')) {
+        window.localStorage.setItem('name', name);
+        window.location.reload();
+      }
+    });
+
+  </script>
+</body>
+</html>
